@@ -5,15 +5,19 @@
   
 
   
-  <title>Archives: 2019 | Hexo</title>
+  <title>Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
+  <meta name="description" content="ARTS 第一周0x01 AlgorithmLeet Code #929 Soulution: java: class Solution {     public int numUniqueEmails(String[] emails) {         Set&amp;lt;String&amp;gt; emailsSet = new HashSet();         for (String email:">
+<meta property="og:type" content="article">
 <meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/archives/2019/index.html">
+<meta property="og:url" content="http://yoursite.com/2019/03/24/arts_1/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="ARTS 第一周0x01 AlgorithmLeet Code #929 Soulution: java: class Solution {     public int numUniqueEmails(String[] emails) {         Set&amp;lt;String&amp;gt; emailsSet = new HashSet();         for (String email:">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-03-24T08:39:05.049Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo">
+<meta name="twitter:description" content="ARTS 第一周0x01 AlgorithmLeet Code #929 Soulution: java: class Solution {     public int numUniqueEmails(String[] emails) {         Set&amp;lt;String&amp;gt; emailsSet = new HashSet();         for (String email:">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -60,53 +64,72 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2019/03/24/arts_1/" class="archive-article-date">
-  <time datetime="2019-03-24T08:39:05.048Z" itemprop="datePublished">Mar 24</time>
+        <section id="main"><article id="post-arts_1" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/03/24/arts_1/" class="article-date">
+  <time datetime="2019-03-24T08:39:05.048Z" itemprop="datePublished">2019-03-24</time>
 </a>
-      
-    </header>
+    
   </div>
-</article>
-  
+  <div class="article-inner">
     
     
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2019/03/24/hello-world/" class="archive-article-date">
-  <time datetime="2019-03-24T07:50:33.714Z" itemprop="datePublished">Mar 24</time>
-</a>
+    <div class="article-entry" itemprop="articleBody">
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/03/24/hello-world/">Hello World</a>
-    </h1>
-  
+        <h1 id="ARTS-第一周"><a href="#ARTS-第一周" class="headerlink" title="ARTS 第一周"></a>ARTS 第一周</h1><h2 id="0x01-Algorithm"><a href="#0x01-Algorithm" class="headerlink" title="0x01 Algorithm"></a>0x01 Algorithm</h2><p><a href="https://leetcode.com/problems/unique-email-addresses" target="_blank" rel="noopener">Leet Code #929</a></p>
+<p>Soulution:</p>
+<p>java:</p>
+<pre><code>class Solution {
+    public int numUniqueEmails(String[] emails) {
+        Set&lt;String&gt; emailsSet = new HashSet();
+        for (String email: emails) {
+            int i = email.indexOf(&quot;@&quot;);
+            String local = email.substring(0, i);
+            String domain = email.substring(i);
+            if (local.contains(&quot;+&quot;)) {
+                local = local.substring(0, local.indexOf(&quot;+&quot;));
+            }
+            local = local.replaceAll(&quot;\\.&quot;, &quot;&quot;);
+            emailsSet.add(local + domain);
+        }
+        return emailsSet.size();
+    }
+}
+</code></pre><p>python:</p>
+<pre><code>class Solution:
+    def numUniqueEmails(self, emails: List[str]) -&gt; int:
+        s = set()
+        for email in emails:
+            local, domain = email.rsplit(&apos;@&apos;,1)
+            if &apos;+&apos; in local:
+                local = local.split(&apos;+&apos;, 1)[0]
+            local = &apos;&apos;.join(local.split(&apos;.&apos;))
+            s.add(&apos;@&apos;.join([local, domain]))
+        return len(s)
+</code></pre><p>本题主要考察了字符串分割和列表去重。</p>
 
-    </header>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/03/24/arts_1/" data-id="cjtmo8xrt0000dhzxxca911hy" class="article-share-link">Share</a>
+      
+      
+    </footer>
   </div>
-</article>
+  
+    
+<nav id="article-nav">
   
   
-    </div></section>
+    <a href="/2019/03/24/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Hello World</div>
+    </a>
   
+</nav>
 
+  
+</article>
 
 </section>
         

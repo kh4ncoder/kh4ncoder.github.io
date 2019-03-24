@@ -62,6 +62,63 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-arts_1" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/03/24/arts_1/" class="article-date">
+  <time datetime="2019-03-24T08:39:05.048Z" itemprop="datePublished">2019-03-24</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="ARTS-第一周"><a href="#ARTS-第一周" class="headerlink" title="ARTS 第一周"></a>ARTS 第一周</h1><h2 id="0x01-Algorithm"><a href="#0x01-Algorithm" class="headerlink" title="0x01 Algorithm"></a>0x01 Algorithm</h2><p><a href="https://leetcode.com/problems/unique-email-addresses" target="_blank" rel="noopener">Leet Code #929</a></p>
+<p>Soulution:</p>
+<p>java:</p>
+<pre><code>class Solution {
+    public int numUniqueEmails(String[] emails) {
+        Set&lt;String&gt; emailsSet = new HashSet();
+        for (String email: emails) {
+            int i = email.indexOf(&quot;@&quot;);
+            String local = email.substring(0, i);
+            String domain = email.substring(i);
+            if (local.contains(&quot;+&quot;)) {
+                local = local.substring(0, local.indexOf(&quot;+&quot;));
+            }
+            local = local.replaceAll(&quot;\\.&quot;, &quot;&quot;);
+            emailsSet.add(local + domain);
+        }
+        return emailsSet.size();
+    }
+}
+</code></pre><p>python:</p>
+<pre><code>class Solution:
+    def numUniqueEmails(self, emails: List[str]) -&gt; int:
+        s = set()
+        for email in emails:
+            local, domain = email.rsplit(&apos;@&apos;,1)
+            if &apos;+&apos; in local:
+                local = local.split(&apos;+&apos;, 1)[0]
+            local = &apos;&apos;.join(local.split(&apos;.&apos;))
+            s.add(&apos;@&apos;.join([local, domain]))
+        return len(s)
+</code></pre><p>本题主要考察了字符串分割和列表去重。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/03/24/arts_1/" data-id="cjtmo8xrt0000dhzxxca911hy" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/03/24/hello-world/" class="article-date">
@@ -97,7 +154,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/03/24/hello-world/" data-id="cjtmmmfoh00004azxkjtghbac" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/03/24/hello-world/" data-id="cjtmo8xrx0001dhzxshqqzttw" class="article-share-link">Share</a>
       
       
     </footer>
@@ -136,6 +193,10 @@
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2019/03/24/arts_1/">(no title)</a>
+          </li>
         
           <li>
             <a href="/2019/03/24/hello-world/">Hello World</a>
