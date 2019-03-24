@@ -96,18 +96,18 @@
 
 
 
-  <meta name="description" content="ARTS 第一周0x01 AlgorithmLeet Code #929 Soulution: java: class Solution {     public int numUniqueEmails(String[] emails) {         Set&amp;lt;String&amp;gt; emailsSet = new HashSet();         for (String email:">
+  <meta name="description" content="0x01 AlgorithmLeet Code #929 Unique Email Addresses Soulution:本题主要考察了字符串分割和列表去重。 java: class Solution {     public int numUniqueEmails(String[] emails) {         Set&amp;lt;String&amp;gt; emailsSet = new Hash">
 <meta name="keywords" content="ARTS">
 <meta property="og:type" content="article">
 <meta property="og:title" content="ARTS 第一周">
 <meta property="og:url" content="https://blog.jeanroy.cc/2019/03/24/arts_1/index.html">
 <meta property="og:site_name" content="Khan的个人博客">
-<meta property="og:description" content="ARTS 第一周0x01 AlgorithmLeet Code #929 Soulution: java: class Solution {     public int numUniqueEmails(String[] emails) {         Set&amp;lt;String&amp;gt; emailsSet = new HashSet();         for (String email:">
+<meta property="og:description" content="0x01 AlgorithmLeet Code #929 Unique Email Addresses Soulution:本题主要考察了字符串分割和列表去重。 java: class Solution {     public int numUniqueEmails(String[] emails) {         Set&amp;lt;String&amp;gt; emailsSet = new Hash">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-03-24T11:38:09.365Z">
+<meta property="og:updated_time" content="2019-03-24T11:51:55.253Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ARTS 第一周">
-<meta name="twitter:description" content="ARTS 第一周0x01 AlgorithmLeet Code #929 Soulution: java: class Solution {     public int numUniqueEmails(String[] emails) {         Set&amp;lt;String&amp;gt; emailsSet = new HashSet();         for (String email:">
+<meta name="twitter:description" content="0x01 AlgorithmLeet Code #929 Unique Email Addresses Soulution:本题主要考察了字符串分割和列表去重。 java: class Solution {     public int numUniqueEmails(String[] emails) {         Set&amp;lt;String&amp;gt; emailsSet = new Hash">
 
 
 
@@ -366,7 +366,7 @@
                 
               
 
-              <time title="Created: 2019-03-24 19:38:00 / Modified: 19:38:09" itemprop="dateCreated datePublished" datetime="2019-03-24T19:38:00+08:00">2019-03-24</time>
+              <time title="Created: 2019-03-24 19:38:00 / Modified: 19:51:55" itemprop="dateCreated datePublished" datetime="2019-03-24T19:38:00+08:00">2019-03-24</time>
             
 
             
@@ -423,8 +423,8 @@
       
 
       
-        <h1 id="ARTS-第一周"><a href="#ARTS-第一周" class="headerlink" title="ARTS 第一周"></a>ARTS 第一周</h1><h2 id="0x01-Algorithm"><a href="#0x01-Algorithm" class="headerlink" title="0x01 Algorithm"></a>0x01 Algorithm</h2><p><a href="https://leetcode.com/problems/unique-email-addresses" target="_blank" rel="noopener">Leet Code #929</a></p>
-<p>Soulution:</p>
+        <h2 id="0x01-Algorithm"><a href="#0x01-Algorithm" class="headerlink" title="0x01 Algorithm"></a>0x01 Algorithm</h2><p>Leet Code #929 <a href="https://leetcode.com/problems/unique-email-addresses" target="_blank" rel="noopener">Unique Email Addresses</a></p>
+<p>Soulution:<br>本题主要考察了字符串分割和列表去重。</p>
 <p>java:</p>
 <pre><code>class Solution {
     public int numUniqueEmails(String[] emails) {
@@ -453,8 +453,7 @@
             local = &apos;&apos;.join(local.split(&apos;.&apos;))
             s.add(&apos;@&apos;.join([local, domain]))
         return len(s)
-</code></pre><p>本题主要考察了字符串分割和列表去重。</p>
-<h2 id="0x02-Review"><a href="#0x02-Review" class="headerlink" title="0x02 Review"></a>0x02 Review</h2><p>来自Medium的一篇关于代码规范的文章<br><a href="https://medium.freecodecamp.org/how-to-write-code-you-will-love-in-the-future-ee5decae5ce4" target="_blank" rel="noopener">How to write code you will love in the future</a> </p>
+</code></pre><h2 id="0x02-Review"><a href="#0x02-Review" class="headerlink" title="0x02 Review"></a>0x02 Review</h2><p>来自Medium的一篇关于代码规范的文章<br><a href="https://medium.freecodecamp.org/how-to-write-code-you-will-love-in-the-future-ee5decae5ce4" target="_blank" rel="noopener">How to write code you will love in the future</a> </p>
 <p>看到这篇文章，想起来了前一段时间在技术公号读到的一篇文章,同样来自medium的文章<a href="https://hackernoon.com/the-7-deadly-sins-of-programming-a7574efc639f" target="_blank" rel="noopener">《The 7 Deadly Sins Of Programming》</a>,想想自己在平时的开发过程中以前总是会犯这七宗罪，虽说现在多少会注意，但离高质量的代码还有很长一段距离，遵守这些规范在很大程度上会大幅提升我们的代码质量，不仅别人容易读懂，自己review的时候也会舒服。好的代码规范收益良多，so，养成一个代码洁癖吧！</p>
 <h2 id="0x03-Tip"><a href="#0x03-Tip" class="headerlink" title="0x03 Tip"></a>0x03 Tip</h2><p>开发过程中，Exception和Error总是傻傻分不清楚，今天读到一篇文章终于有了清晰的一个认识。<br>在Java中，Exception和Error都继承自Throwable,只有Throwable类才可throw或catch。<br>Excpetion: 程序正常运行，可预料的意外情况。分checked和unchecked,checked必须显式的捕获处理，编译期检查，unchecked为运行时异常，可根据业务进行选择是否捕获，不会在编译期强制要求。<br>Error: 程序不正常，导致程序运行崩溃。不需要捕获。</p>
 <h2 id="0x04-Share"><a href="#0x04-Share" class="headerlink" title="0x04 Share"></a>0x04 Share</h2><p>之前开发的时候服务器内网隔离，需要连接内网服务器，分享一篇SSH内网穿透的文章,不用担心服务器内网无法访问了。<br><a href="http://arondight.me/2016/02/17/%E4%BD%BF%E7%94%A8SSH%E5%8F%8D%E5%90%91%E9%9A%A7%E9%81%93%E8%BF%9B%E8%A1%8C%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F/" target="_blank" rel="noopener">使用SSH反向隧道进行内网穿透</a></p>
@@ -662,7 +661,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#ARTS-第一周"><span class="nav-number">1.</span> <span class="nav-text">ARTS 第一周</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#0x01-Algorithm"><span class="nav-number">1.1.</span> <span class="nav-text">0x01 Algorithm</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#0x02-Review"><span class="nav-number">1.2.</span> <span class="nav-text">0x02 Review</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#0x03-Tip"><span class="nav-number">1.3.</span> <span class="nav-text">0x03 Tip</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#0x04-Share"><span class="nav-number">1.4.</span> <span class="nav-text">0x04 Share</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#0x01-Algorithm"><span class="nav-number">1.</span> <span class="nav-text">0x01 Algorithm</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#0x02-Review"><span class="nav-number">2.</span> <span class="nav-text">0x02 Review</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#0x03-Tip"><span class="nav-number">3.</span> <span class="nav-text">0x03 Tip</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#0x04-Share"><span class="nav-number">4.</span> <span class="nav-text">0x04 Share</span></a></li></ol></div>
             
 
           </div>
