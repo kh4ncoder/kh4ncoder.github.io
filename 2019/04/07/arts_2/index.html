@@ -96,25 +96,25 @@
 
 
 
-  <meta name="description" content="0x01 AlgorithmLeet Code #929 Unique Email Addresses Soulution:本题主要考察了字符串分割和列表去重。 java: class Solution {     public int numUniqueEmails(String[] emails) {         Set&amp;lt;String&amp;gt; emailsSet = new Hash">
+  <meta name="description" content="0x01 AlgorithmLeet Code #804 Unique Morse Code Words Soulution:本题一开始很自然想到用字符映射和列表去重，但使用列表索引会有更高的效率。 java: class Solution {    public int uniqueMorseRepresentations(String[] words) {        String[] MO">
 <meta name="keywords" content="ARTS">
 <meta property="og:type" content="article">
-<meta property="og:title" content="ARTS 第一周">
-<meta property="og:url" content="https://blog.jeanroy.cc/2019/03/24/arts_1/index.html">
+<meta property="og:title" content="ARTS 第二周">
+<meta property="og:url" content="https://blog.jeanroy.cc/2019/04/07/arts_2/index.html">
 <meta property="og:site_name" content="Khan的个人博客">
-<meta property="og:description" content="0x01 AlgorithmLeet Code #929 Unique Email Addresses Soulution:本题主要考察了字符串分割和列表去重。 java: class Solution {     public int numUniqueEmails(String[] emails) {         Set&amp;lt;String&amp;gt; emailsSet = new Hash">
+<meta property="og:description" content="0x01 AlgorithmLeet Code #804 Unique Morse Code Words Soulution:本题一开始很自然想到用字符映射和列表去重，但使用列表索引会有更高的效率。 java: class Solution {    public int uniqueMorseRepresentations(String[] words) {        String[] MO">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-03-24T11:51:55.253Z">
+<meta property="og:updated_time" content="2019-04-07T14:19:46.166Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="ARTS 第一周">
-<meta name="twitter:description" content="0x01 AlgorithmLeet Code #929 Unique Email Addresses Soulution:本题主要考察了字符串分割和列表去重。 java: class Solution {     public int numUniqueEmails(String[] emails) {         Set&amp;lt;String&amp;gt; emailsSet = new Hash">
+<meta name="twitter:title" content="ARTS 第二周">
+<meta name="twitter:description" content="0x01 AlgorithmLeet Code #804 Unique Morse Code Words Soulution:本题一开始很自然想到用字符映射和列表去重，但使用列表索引会有更高的效率。 java: class Solution {    public int uniqueMorseRepresentations(String[] words) {        String[] MO">
 
 
 
 
 
 
-  <link rel="canonical" href="https://blog.jeanroy.cc/2019/03/24/arts_1/">
+  <link rel="canonical" href="https://blog.jeanroy.cc/2019/04/07/arts_2/">
 
 
 
@@ -124,7 +124,7 @@
   };
 </script>
 
-  <title>ARTS 第一周 | Khan的个人博客</title>
+  <title>ARTS 第二周 | Khan的个人博客</title>
   
 
 
@@ -323,7 +323,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://blog.jeanroy.cc/2019/03/24/arts_1/">
+    <link itemprop="mainEntityOfPage" href="https://blog.jeanroy.cc/2019/04/07/arts_2/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Khan">
@@ -340,7 +340,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">ARTS 第一周
+          <h1 class="post-title" itemprop="name headline">ARTS 第二周
 
               
             
@@ -366,7 +366,7 @@
                 
               
 
-              <time title="Created: 2019-03-24 19:38:00 / Modified: 19:51:55" itemprop="dateCreated datePublished" datetime="2019-03-24T19:38:00+08:00">2019-03-24</time>
+              <time title="Created: 2019-04-07 21:38:00 / Modified: 22:19:46" itemprop="dateCreated datePublished" datetime="2019-04-07T21:38:00+08:00">2019-04-07</time>
             
 
             
@@ -423,40 +423,31 @@
       
 
       
-        <h2 id="0x01-Algorithm"><a href="#0x01-Algorithm" class="headerlink" title="0x01 Algorithm"></a>0x01 Algorithm</h2><p>Leet Code #929 <a href="https://leetcode.com/problems/unique-email-addresses" target="_blank" rel="noopener">Unique Email Addresses</a></p>
-<p>Soulution:<br>本题主要考察了字符串分割和列表去重。</p>
+        <h2 id="0x01-Algorithm"><a href="#0x01-Algorithm" class="headerlink" title="0x01 Algorithm"></a>0x01 Algorithm</h2><p>Leet Code #804 <a href="https://leetcode.com/problems/unique-morse-code-words/" target="_blank" rel="noopener">Unique Morse Code Words</a></p>
+<p>Soulution:<br>本题一开始很自然想到用字符映射和列表去重，但使用列表索引会有更高的效率。</p>
 <p>java:</p>
-<pre><code>class Solution {
-    public int numUniqueEmails(String[] emails) {
-        Set&lt;String&gt; emailsSet = new HashSet();
-        for (String email: emails) {
-            int i = email.indexOf(&quot;@&quot;);
-            String local = email.substring(0, i);
-            String domain = email.substring(i);
-            if (local.contains(&quot;+&quot;)) {
-                local = local.substring(0, local.indexOf(&quot;+&quot;));
-            }
-            local = local.replaceAll(&quot;\\.&quot;, &quot;&quot;);
-            emailsSet.add(local + domain);
-        }
-        return emailsSet.size();
+<p>class Solution {<br>    public int uniqueMorseRepresentations(String[] words) {<br>        String[] MORSE = new String[]{“.-“,”-…”,”-.-.”,”-..”,”.”,”..-.”,”–.”,<br>                         “….”,”..”,”.—“,”-.-“,”.-..”,”–”,”-.”,<br>                         “—“,”.–.”,”–.-“,”.-.”,”…”,”-“,”..-“,<br>                         “…-“,”.–”,”-..-“,”-.–”,”–..”};<br>        Set<string> seen = new HashSet();</string></p>
+<pre><code>    for (String word: words) {
+        StringBuilder code = new StringBuilder();
+        for (char c: word.toCharArray())
+            code.append(MORSE[c - &apos;a&apos;]);
+        seen.add(code.toString());
     }
+    return seen.size();
 }
-</code></pre><p>python:</p>
-<pre><code>class Solution:
-    def numUniqueEmails(self, emails: List[str]) -&gt; int:
-        s = set()
-        for email in emails:
-            local, domain = email.rsplit(&apos;@&apos;,1)
-            if &apos;+&apos; in local:
-                local = local.split(&apos;+&apos;, 1)[0]
-            local = &apos;&apos;.join(local.split(&apos;.&apos;))
-            s.add(&apos;@&apos;.join([local, domain]))
-        return len(s)
-</code></pre><h2 id="0x02-Review"><a href="#0x02-Review" class="headerlink" title="0x02 Review"></a>0x02 Review</h2><p>来自Medium的一篇关于代码规范的文章<br><a href="https://medium.freecodecamp.org/how-to-write-code-you-will-love-in-the-future-ee5decae5ce4" target="_blank" rel="noopener">How to write code you will love in the future</a> </p>
-<p>看到这篇文章，想起来了前一段时间在技术公号读到的一篇文章,同样来自medium的文章<a href="https://hackernoon.com/the-7-deadly-sins-of-programming-a7574efc639f" target="_blank" rel="noopener">《The 7 Deadly Sins Of Programming》</a>,想想自己在平时的开发过程中以前总是会犯这七宗罪，虽说现在多少会注意，但离高质量的代码还有很长一段距离，遵守这些规范在很大程度上会大幅提升我们的代码质量，不仅别人容易读懂，自己review的时候也会舒服。好的代码规范收益良多，so，养成一个代码洁癖吧！</p>
-<h2 id="0x03-Tip"><a href="#0x03-Tip" class="headerlink" title="0x03 Tip"></a>0x03 Tip</h2><p>开发过程中，Exception和Error总是傻傻分不清楚，今天读到一篇文章终于有了清晰的一个认识。<br>在Java中，Exception和Error都继承自Throwable,只有Throwable类才可throw或catch。<br>Excpetion: 程序正常运行，可预料的意外情况。分checked和unchecked,checked必须显式的捕获处理，编译期检查，unchecked为运行时异常，可根据业务进行选择是否捕获，不会在编译期强制要求。<br>Error: 程序不正常，导致程序运行崩溃。不需要捕获。</p>
-<h2 id="0x04-Share"><a href="#0x04-Share" class="headerlink" title="0x04 Share"></a>0x04 Share</h2><p>之前开发的时候服务器内网隔离，需要连接内网服务器，分享一篇SSH内网穿透的文章,不用担心服务器内网无法访问了。<br><a href="http://arondight.me/2016/02/17/%E4%BD%BF%E7%94%A8SSH%E5%8F%8D%E5%90%91%E9%9A%A7%E9%81%93%E8%BF%9B%E8%A1%8C%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F/" target="_blank" rel="noopener">使用SSH反向隧道进行内网穿透</a></p>
+</code></pre><p>}</p>
+<p>python:</p>
+<p>class Solution:<br>    def uniqueMorseRepresentations(self, words: List[str]) -&gt; int:<br>        k = [‘a’, ‘b’, ‘c’, ‘d’, ‘e’, ‘f’, ‘g’, ‘h’, ‘i’, ‘j’, ‘k’, ‘l’, ‘m’, ‘n’, ‘o’, ‘p’,<br>            ‘q’, ‘r’, ‘s’, ‘t’, ‘u’, ‘v’, ‘w’, ‘x’, ‘y’, ‘z’]<br>        v = [“.-“,”-…”,”-.-.”,”-..”,”.”,”..-.”,”–.”,”….”,”..”,”.—“,”-.-“,”.-..”,”–”,”-.”,”—“,”.–.”,”–.-“,”.-.”,”…”,”-“,”..-“,”…-“,”.–”,”-..-“,”-.–”,”–..”]</p>
+<pre><code>mp = dict(zip(k, v))
+
+s = set([&apos;&apos;.join([mp[e] for e in wd]) for wd in words])
+return len(s)
+</code></pre><h2 id="0x02-Review"><a href="#0x02-Review" class="headerlink" title="0x02 Review"></a>0x02 Review</h2><p>来自Medium的一篇关于键盘的文章<br><a href="https://medium.com/teknik/changing-the-keys-981b83a3fb38" target="_blank" rel="noopener">How to write code you will love in the future</a> </p>
+<p>很有意思的一篇文章，科研人员专门发明了法语键盘，相较我们常用的键盘（英文键盘，已是事实上的标准）增加了法语字符的输入，如：œ 、 É等。可以想象，这些定制化的键盘可以提高法语输入的效率。其实我想了，我们在日常行为模式已经固定的情况下，能不能再多思考一下，定制化一下适合个人的准则并固化，极大提高个人的效率，不管从生活还是工作方面。如果我们每个人都有一套自己的”定制化“模式，我们整个社会的发展就会提高很大一步。</p>
+<h2 id="0x03-Tip"><a href="#0x03-Tip" class="headerlink" title="0x03 Tip"></a>0x03 Tip</h2><p>区分一下同步异步和阻塞非阻塞</p>
+<p>同步异步：<br>简单来说，同步是一种可靠的有序运行机制，当我们进行同步操作时，后续的任务是等待当前调用返回，才会进行下一步；而异步则相反，其他任务不需要等待当前调用返回，通常依靠事件、回调等机制来实现<strong>任务间次序关系</strong>。</p>
+<p>阻塞和非阻塞：<br>在进行阻塞操作时，当前线程会处于阻塞状态，无法从事其他任务，只有<strong>当条件就绪才能继续</strong>，比如 ServerSocket 新连接建立完毕，或数据读取、写入操作完成；而非阻塞则是不管 IO操作是否结束，直接返回，相应操作<strong>在后台继续处理</strong>。</p>
+<h2 id="0x04-Share"><a href="#0x04-Share" class="headerlink" title="0x04 Share"></a>0x04 Share</h2><p>你的密码泄露了吗，国外一家可以查密码泄露的网站：<br><a href="https://haveibeenpwned.com/" target="_blank" rel="noopener">‘;–have i been pwned?</a></p>
 
       
     </div>
@@ -493,8 +484,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/03/24/hello-world/" rel="next" title="Hello World">
-                <i class="fa fa-chevron-left"></i> Hello World
+              <a href="/2019/03/24/arts_1/" rel="next" title="ARTS 第一周">
+                <i class="fa fa-chevron-left"></i> ARTS 第一周
               </a>
             
           </div>
@@ -502,10 +493,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/04/07/arts_2/" rel="prev" title="ARTS 第二周">
-                ARTS 第二周 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>

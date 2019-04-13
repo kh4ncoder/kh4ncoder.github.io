@@ -319,6 +319,191 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://blog.jeanroy.cc/2019/04/07/arts_2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Khan">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Khan的个人博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2019/04/07/arts_2/" class="post-title-link" itemprop="url">ARTS 第二周</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2019-04-07 21:38:00 / Modified: 22:19:46" itemprop="dateCreated datePublished" datetime="2019-04-07T21:38:00+08:00">2019-04-07</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/ARTS/" itemprop="url" rel="index"><span itemprop="name">ARTS</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="0x01-Algorithm"><a href="#0x01-Algorithm" class="headerlink" title="0x01 Algorithm"></a>0x01 Algorithm</h2><p>Leet Code #804 <a href="https://leetcode.com/problems/unique-morse-code-words/" target="_blank" rel="noopener">Unique Morse Code Words</a></p>
+<p>Soulution:<br>本题一开始很自然想到用字符映射和列表去重，但使用列表索引会有更高的效率。</p>
+<p>java:</p>
+<p>class Solution {<br>    public int uniqueMorseRepresentations(String[] words) {<br>        String[] MORSE = new String[]{“.-“,”-…”,”-.-.”,”-..”,”.”,”..-.”,”–.”,<br>                         “….”,”..”,”.—“,”-.-“,”.-..”,”–”,”-.”,<br>                         “—“,”.–.”,”–.-“,”.-.”,”…”,”-“,”..-“,<br>                         “…-“,”.–”,”-..-“,”-.–”,”–..”};<br>        Set<string> seen = new HashSet();</string></p>
+<pre><code>    for (String word: words) {
+        StringBuilder code = new StringBuilder();
+        for (char c: word.toCharArray())
+            code.append(MORSE[c - &apos;a&apos;]);
+        seen.add(code.toString());
+    }
+    return seen.size();
+}
+</code></pre><p>}</p>
+<p>python:</p>
+<p>class Solution:<br>    def uniqueMorseRepresentations(self, words: List[str]) -&gt; int:<br>        k = [‘a’, ‘b’, ‘c’, ‘d’, ‘e’, ‘f’, ‘g’, ‘h’, ‘i’, ‘j’, ‘k’, ‘l’, ‘m’, ‘n’, ‘o’, ‘p’,<br>            ‘q’, ‘r’, ‘s’, ‘t’, ‘u’, ‘v’, ‘w’, ‘x’, ‘y’, ‘z’]<br>        v = [“.-“,”-…”,”-.-.”,”-..”,”.”,”..-.”,”–.”,”….”,”..”,”.—“,”-.-“,”.-..”,”–”,”-.”,”—“,”.–.”,”–.-“,”.-.”,”…”,”-“,”..-“,”…-“,”.–”,”-..-“,”-.–”,”–..”]</p>
+<pre><code>mp = dict(zip(k, v))
+
+s = set([&apos;&apos;.join([mp[e] for e in wd]) for wd in words])
+return len(s)
+</code></pre><h2 id="0x02-Review"><a href="#0x02-Review" class="headerlink" title="0x02 Review"></a>0x02 Review</h2><p>来自Medium的一篇关于键盘的文章<br><a href="https://medium.com/teknik/changing-the-keys-981b83a3fb38" target="_blank" rel="noopener">How to write code you will love in the future</a> </p>
+<p>很有意思的一篇文章，科研人员专门发明了法语键盘，相较我们常用的键盘（英文键盘，已是事实上的标准）增加了法语字符的输入，如：œ 、 É等。可以想象，这些定制化的键盘可以提高法语输入的效率。其实我想了，我们在日常行为模式已经固定的情况下，能不能再多思考一下，定制化一下适合个人的准则并固化，极大提高个人的效率，不管从生活还是工作方面。如果我们每个人都有一套自己的”定制化“模式，我们整个社会的发展就会提高很大一步。</p>
+<h2 id="0x03-Tip"><a href="#0x03-Tip" class="headerlink" title="0x03 Tip"></a>0x03 Tip</h2><p>区分一下同步异步和阻塞非阻塞</p>
+<p>同步异步：<br>简单来说，同步是一种可靠的有序运行机制，当我们进行同步操作时，后续的任务是等待当前调用返回，才会进行下一步；而异步则相反，其他任务不需要等待当前调用返回，通常依靠事件、回调等机制来实现<strong>任务间次序关系</strong>。</p>
+<p>阻塞和非阻塞：<br>在进行阻塞操作时，当前线程会处于阻塞状态，无法从事其他任务，只有<strong>当条件就绪才能继续</strong>，比如 ServerSocket 新连接建立完毕，或数据读取、写入操作完成；而非阻塞则是不管 IO操作是否结束，直接返回，相应操作<strong>在后台继续处理</strong>。</p>
+<h2 id="0x04-Share"><a href="#0x04-Share" class="headerlink" title="0x04 Share"></a>0x04 Share</h2><p>你的密码泄露了吗，国外一家可以查密码泄露的网站：<br><a href="https://haveibeenpwned.com/" target="_blank" rel="noopener">‘;–have i been pwned?</a></p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://blog.jeanroy.cc/2019/03/24/arts_1/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -687,7 +872,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">2</span>
+                    <span class="site-state-item-count">3</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
